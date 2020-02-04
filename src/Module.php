@@ -23,14 +23,16 @@ use Laminas\ModuleManager\ModuleManager;
 use Laminas\Session\Config\StandardConfig;
 use Laminas\Session\SessionManager;
 use Laminas\Session\Container;
+use Application\Controller\CoreEntityController;
+use OnePlace\Worktime\Controller\PluginController;
 
 class Module {
     /**
      * Module Version
      *
-     * @since 1.0.5
+     * @since 1.0.0
      */
-    const VERSION = '1.0.5';
+    const VERSION = '1.0.0';
 
     /**
      * Load module config file
@@ -69,17 +71,49 @@ class Module {
     public function getControllerConfig() : array {
         return [
             'factories' => [
+                # Plugin Example Controller
+                Controller\PluginController::class => function($container) {
+                    $oDbAdapter = $container->get(AdapterInterface::class);
+                    return new Controller\PluginController(
+                        $oDbAdapter,
+                        $container->get(Model\WorktimeTable::class),
+                        $container
+                    );
+                },
+                # Worktime Main Controller
                 Controller\WorktimeController::class => function($container) {
                     $oDbAdapter = $container->get(AdapterInterface::class);
+                    $tableGateway = $container->get(Model\WorktimeTable::class);
+                    # hook plugin
+                    CoreEntityController::addHook('worktime-add-before',(object)['sFunction'=>'testFunction','oItem'=>new PluginController($oDbAdapter,$tableGateway,$container)]);
                     return new Controller\WorktimeController(
                         $oDbAdapter,
                         $container->get(Model\WorktimeTable::class),
                         $container
                     );
                 },
+                # Api Plugin
                 Controller\ApiController::class => function($container) {
                     $oDbAdapter = $container->get(AdapterInterface::class);
                     return new Controller\ApiController(
+                        $oDbAdapter,
+                        $container->get(Model\WorktimeTable::class),
+                        $container
+                    );
+                },
+                # Export Plugin
+                Controller\ExportController::class => function($container) {
+                    $oDbAdapter = $container->get(AdapterInterface::class);
+                    return new Controller\ExportController(
+                        $oDbAdapter,
+                        $container->get(Model\WorktimeTable::class),
+                        $container
+                    );
+                },
+                # Search Plugin
+                Controller\SearchController::class => function($container) {
+                    $oDbAdapter = $container->get(AdapterInterface::class);
+                    return new Controller\SearchController(
                         $oDbAdapter,
                         $container->get(Model\WorktimeTable::class),
                         $container

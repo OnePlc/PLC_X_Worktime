@@ -52,6 +52,48 @@ return [
                     ],
                 ],
             ],
+            'worktime-export' => [
+                'type'    => Segment::class,
+                'options' => [
+                    'route' => '/worktime/export[/:action[/:id]]',
+                    'constraints' => [
+                        'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
+                        'id'     => '[0-9]+',
+                    ],
+                    'defaults' => [
+                        'controller' => Controller\ExportController::class,
+                        'action'     => 'index',
+                    ],
+                ],
+            ],
+            'worktime-search' => [
+                'type'    => Segment::class,
+                'options' => [
+                    'route' => '/worktime/search[/:action[/:id]]',
+                    'constraints' => [
+                        'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
+                        'id'     => '[0-9]+',
+                    ],
+                    'defaults' => [
+                        'controller' => Controller\SearchController::class,
+                        'action'     => 'index',
+                    ],
+                ],
+            ],
+            'worktime-plugin' => [
+                'type'    => Segment::class,
+                'options' => [
+                    'route' => '/worktime/plugin[/:action[/:id]]',
+                    'constraints' => [
+                        'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
+                        'id'     => '[0-9]+',
+                    ],
+                    'defaults' => [
+                        'controller' => Controller\PluginController::class,
+                        'action'     => 'index',
+                    ],
+                ],
+            ],
         ],
     ],
 
@@ -59,6 +101,18 @@ return [
     'view_manager' => [
         'template_path_stack' => [
             'worktime' => __DIR__ . '/../view',
+        ],
+    ],
+
+    # Translator
+    'translator' => [
+        'locale' => 'de_DE',
+        'translation_file_patterns' => [
+            [
+                'type'     => 'gettext',
+                'base_dir' => __DIR__ . '/../language',
+                'pattern'  => '%s.mo',
+            ],
         ],
     ],
 ];
