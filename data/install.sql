@@ -64,13 +64,6 @@ INSERT INTO `core_form_field` (`Field_ID`, `type`, `label`, `fieldkey`, `tab`, `
 (NULL, 'text', 'Name', 'label', 'worktime-base', 'worktime-single', 'col-md-3', '/worktime/view/##ID##', '', 0, 1, 0, '', '', '');
 
 --
--- Default Widgets
---
-INSERT INTO `core_widget` (`Widget_ID`, `widget_name`, `label`, `permission`) VALUES
-(NULL, 'worktime_dailystats', 'Worktime - Daily Stats', 'index-Worktime\\Controller\\WorktimeController'),
-(NULL, 'worktime_taginfo', 'Worktime - Tag Info', 'index-Worktime\\Controller\\WorktimeController');
-
---
 -- User XP Activity
 --
 INSERT INTO `user_xp_activity` (`Activity_ID`, `xp_key`, `label`, `xp_base`) VALUES

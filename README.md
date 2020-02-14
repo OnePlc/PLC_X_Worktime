@@ -2,6 +2,11 @@
 
 [![Build Status](https://travis-ci.com/OnePlc/PLC_X_Worktime.svg?branch=master)](https://travis-ci.com/OnePlc/PLC_X_Worktime)
 [![Coverage Status](https://coveralls.io/repos/github/OnePlc/PLC_X_Worktime/badge.svg?branch=master)](https://coveralls.io/github/OnePlc/PLC_X_Worktime?branch=master)
+![Packagist Downloads](https://img.shields.io/packagist/dt/oneplace/oneplace-worktime)
+![Stable Version](https://img.shields.io/packagist/v/oneplace/oneplace-worktime)
+![GitHub Release Date](https://img.shields.io/github/release-date/oneplc/plc_x_worktime)
+![Open Issues](https://img.shields.io/github/issues-raw/oneplc/plc_x_worktime)
+![Discourse status](https://img.shields.io/discourse/status?server=https%3A%2F%2Fdiscourse.1plc.ch)
 
 ## Introduction
 
