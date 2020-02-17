@@ -26,7 +26,8 @@ INSERT INTO `permission` (`permission_key`, `module`, `label`, `nav_label`, `nav
 ('list', 'OnePlace\\Worktime\\Controller\\ApiController', 'List', '', '', 1),
 ('view', 'OnePlace\\Worktime\\Controller\\WorktimeController', 'View', '', '', 0),
 ('dump', 'OnePlace\\Worktime\\Controller\\ExportController', 'Excel Dump', '', '', 0),
-('index', 'OnePlace\\Worktime\\Controller\\SearchController', 'Search', '', '', 0);
+('index', 'OnePlace\\Worktime\\Controller\\SearchController', 'Search', '', '', 0),
+('save', 'OnePlace\\Worktime\\Controller\\SearchController', 'Save Search', '', '', 0, 0);
 
 --
 -- Form
@@ -53,9 +54,9 @@ INSERT INTO `core_form_button` (`Button_ID`, `label`, `icon`, `title`, `href`, `
 (NULL, 'Edit Worktime', 'fas fa-edit', 'Edit Worktime', '/worktime/edit/##ID##', 'primary', '', 'worktime-view', 'link', '', ''),
 (NULL, 'Add Worktime', 'fas fa-plus', 'Add Worktime', '/worktime/add', 'primary', '', 'worktime-index', 'link', '', ''),
 (NULL, 'Export Worktimes', 'fas fa-file-excel', 'Export Worktimes', '/worktime/export', 'primary', '', 'worktime-index', 'link', '', ''),
-(NULL, 'Find Worktimes', 'fas fa-searh', 'Find Worktimes', '/worktime/search', 'primary', '', 'worktime-index', 'link', '', ''),
+(NULL, 'Find Worktimes', 'fas fa-search', 'Find Worktimes', '/worktime/search', 'primary', '', 'worktime-index', 'link', '', ''),
 (NULL, 'Export Worktimes', 'fas fa-file-excel', 'Export Worktimes', '#', 'primary initExcelDump', '', 'worktime-search', 'link', '', ''),
-(NULL, 'New Search', 'fas fa-searh', 'New Search', '/worktime/search', 'primary', '', 'worktime-search', 'link', '', '');
+(NULL, 'New Search', 'fas fa-search', 'New Search', '/worktime/search', 'primary', '', 'worktime-search', 'link', '', '');
 
 --
 -- Fields
