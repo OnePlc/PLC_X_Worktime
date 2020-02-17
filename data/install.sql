@@ -19,14 +19,14 @@ ALTER TABLE `worktime`
 --
 -- Permissions
 --
-INSERT INTO `permission` (`permission_key`, `module`, `label`, `nav_label`, `nav_href`, `show_in_menu`) VALUES
-('add', 'OnePlace\\Worktime\\Controller\\WorktimeController', 'Add', '', '', 0),
-('edit', 'OnePlace\\Worktime\\Controller\\WorktimeController', 'Edit', '', '', 0),
-('index', 'OnePlace\\Worktime\\Controller\\WorktimeController', 'Index', 'Worktimes', '/worktime', 1),
-('list', 'OnePlace\\Worktime\\Controller\\ApiController', 'List', '', '', 1),
-('view', 'OnePlace\\Worktime\\Controller\\WorktimeController', 'View', '', '', 0),
-('dump', 'OnePlace\\Worktime\\Controller\\ExportController', 'Excel Dump', '', '', 0),
-('index', 'OnePlace\\Worktime\\Controller\\SearchController', 'Search', '', '', 0),
+INSERT INTO `permission` (`permission_key`, `module`, `label`, `nav_label`, `nav_href`, `show_in_menu`, `needs_globaladmin`) VALUES
+('add', 'OnePlace\\Worktime\\Controller\\WorktimeController', 'Add', '', '', 0, 0),
+('edit', 'OnePlace\\Worktime\\Controller\\WorktimeController', 'Edit', '', '', 0, 0),
+('index', 'OnePlace\\Worktime\\Controller\\WorktimeController', 'Index', 'Worktimes', '/worktime', 1, 0),
+('list', 'OnePlace\\Worktime\\Controller\\ApiController', 'List', '', '', 1, 0),
+('view', 'OnePlace\\Worktime\\Controller\\WorktimeController', 'View', '', '', 0, 0),
+('dump', 'OnePlace\\Worktime\\Controller\\ExportController', 'Excel Dump', '', '', 0, 0),
+('index', 'OnePlace\\Worktime\\Controller\\SearchController', 'Search', '', '', 0, 0),
 ('save', 'OnePlace\\Worktime\\Controller\\SearchController', 'Save Search', '', '', 0, 0);
 
 --
