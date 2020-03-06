@@ -63,7 +63,6 @@ class WorktimeTable extends CoreEntityTable {
         $aDefaultData = [
             'label' => $oWorktime->label,
         ];
-
         return $this->saveSingleEntity($oWorktime,'Worktime_ID',$aDefaultData);
     }
 
