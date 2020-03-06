@@ -72,4 +72,9 @@ INSERT INTO `user_xp_activity` (`Activity_ID`, `xp_key`, `label`, `xp_base`) VAL
 (NULL, 'worktime-edit', 'Edit Worktime', '5'),
 (NULL, 'worktime-export', 'Edit Worktime', '5');
 
+--
+-- module icon
+--
+INSERT INTO `settings` (`settings_key`, `settings_value`) VALUES ('worktime-icon', 'fas fa-clock');
+
 COMMIT;
