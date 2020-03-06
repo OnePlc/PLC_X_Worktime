@@ -1,11 +1,18 @@
+<?php
+use Application\Controller\CoreController;
+?>
 <div class="card">
     <div class="card-header">
         <div class="row">
             <div class="col-md-10">
-                <?= $this->partial('partial/indexheader',['sTitle'=>'Worktimes']) ?>
+                <?php
+                $sIcon = (array_key_exists('worktime-icon',CoreController::$aGlobalSettings))
+                    ?  CoreController::$aGlobalSettings['worktime-icon'] : '';
+                ?>
+                <?= $this->partial('partial/indexheader',['sTitle'=>'Worktime','sIcon' => $sIcon]) ?>
             </div>
             <div class="col-md-2 text-right">
-                <select class="form-control">
+                <select class="form-control plc-index-load-saved-search">
                     <option>-- <?=$this->translate('All')?> --</option>
                     <?php
                     if (count($aSavedSearches) > 0) {
